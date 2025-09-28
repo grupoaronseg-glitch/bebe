@@ -62,30 +62,64 @@ class WebRobot:
         sys.exit(0)
 
     def setup_driver(self):
-        """Configura o driver do Chrome em modo headless"""
+        """Configura o driver do Chrome/Firefox em modo headless"""
         try:
-            # Verifica se chromedriver está disponível
-            result = subprocess.run(['which', 'chromedriver'], capture_output=True, text=True)
-            if not result.stdout.strip():
-                # Tenta instalar chromedriver automaticamente
-                self.logger.warning("⚠️  ChromeDriver não encontrado. Tentando instalar...")
-                self.install_chromedriver()
-
-            chrome_options = Options()
-            chrome_options.add_argument("--headless")  # Modo sem interface gráfica
-            chrome_options.add_argument("--no-sandbox")
-            chrome_options.add_argument("--disable-dev-shm-usage")
-            chrome_options.add_argument("--disable-gpu")
-            chrome_options.add_argument("--window-size=1920,1080")
-            chrome_options.add_argument("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
-            
-            self.driver = webdriver.Chrome(options=chrome_options)
-            self.driver.set_page_load_timeout(30)
-            self.logger.info("✅ NAVEGADOR CONFIGURADO COM SUCESSO (Modo Headless)")
-            return True
+            # Primeiro tenta usar webdriver-manager para Chrome
+            try:
+                from webdriver_manager.chrome import ChromeDriverManager
+                chrome_options = Options()
+                chrome_options.add_argument("--headless")  # Modo sem interface gráfica
+                chrome_options.add_argument("--no-sandbox")
+                chrome_options.add_argument("--disable-dev-shm-usage")
+                chrome_options.add_argument("--disable-gpu")
+                chrome_options.add_argument("--window-size=1920,1080")
+                chrome_options.add_argument("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+                
+                service = Service(ChromeDriverManager().install())
+                self.driver = webdriver.Chrome(service=service, options=chrome_options)
+                self.driver.set_page_load_timeout(30)
+                self.logger.info("✅ NAVEGADOR CHROME CONFIGURADO COM SUCESSO (Modo Headless)")
+                return True
+                
+            except Exception as chrome_error:
+                self.logger.warning(f"⚠️  Chrome não disponível: {chrome_error}")
+                
+                # Fallback para Firefox
+                try:
+                    from selenium.webdriver.firefox.options import Options as FirefoxOptions
+                    from webdriver_manager.firefox import GeckoDriverManager
+                    
+                    firefox_options = FirefoxOptions()
+                    firefox_options.add_argument("--headless")
+                    
+                    service = Service(GeckoDriverManager().install())
+                    self.driver = webdriver.Firefox(service=service, options=firefox_options)
+                    self.driver.set_page_load_timeout(30)
+                    self.logger.info("✅ NAVEGADOR FIREFOX CONFIGURADO COM SUCESSO (Modo Headless)")
+                    return True
+                    
+                except Exception as firefox_error:
+                    self.logger.warning(f"⚠️  Firefox não disponível: {firefox_error}")
+                    
+                    # Último recurso: Chrome local
+                    try:
+                        chrome_options = Options()
+                        chrome_options.add_argument("--headless")
+                        chrome_options.add_argument("--no-sandbox")
+                        chrome_options.add_argument("--disable-dev-shm-usage")
+                        chrome_options.add_argument("--disable-gpu")
+                        
+                        self.driver = webdriver.Chrome(options=chrome_options)
+                        self.driver.set_page_load_timeout(30)
+                        self.logger.info("✅ NAVEGADOR CHROME LOCAL CONFIGURADO (Modo Headless)")
+                        return True
+                        
+                    except Exception as final_error:
+                        self.logger.error(f"❌ Todos os navegadores falharam: {final_error}")
+                        return False
             
         except Exception as e:
-            self.logger.error(f"❌ ERRO AO CONFIGURAR NAVEGADOR: {e}")
+            self.logger.error(f"❌ ERRO CRÍTICO AO CONFIGURAR NAVEGADOR: {e}")
             return False
 
     def install_chromedriver(self):
