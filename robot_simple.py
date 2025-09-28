@@ -128,23 +128,21 @@ class WebRobotSimple:
             return False
 
     def run_cycle(self):
-        """Executa um ciclo completo (ambos os sites)"""
+        """Executa um ciclo completo (apenas um site)"""
         self.cycle_count += 1
+        self.logger.info("=" * 60)
         self.logger.info(f"🔄 INICIANDO CICLO #{self.cycle_count}")
+        self.logger.info("=" * 60)
         
-        success_count = 0
-        for i, site in enumerate(self.sites, 1):
-            self.logger.info(f"📍 SITE {i}/2 DO CICLO #{self.cycle_count}")
-            if self.visit_site(site):
-                success_count += 1
+        success = self.visit_site(self.site)
         
-        if success_count == len(self.sites):
-            self.logger.info(f"✅ CICLO #{self.cycle_count} COMPLETADO COM SUCESSO! ({success_count}/{len(self.sites)} sites)")
+        if success:
+            self.logger.info(f"✅ CICLO #{self.cycle_count} COMPLETADO COM SUCESSO!")
         else:
-            self.logger.warning(f"⚠️  CICLO #{self.cycle_count} completado com erros ({success_count}/{len(self.sites)} sites bem-sucedidos)")
+            self.logger.warning(f"⚠️  CICLO #{self.cycle_count} completado com erros")
         
-        self.logger.info("⏸️  Pausa de 2 segundos antes do próximo ciclo...")
-        time.sleep(2)
+        self.logger.info("⏸️  Pausa de 3 segundos antes do próximo ciclo...")
+        time.sleep(3)
 
     def run(self):
         """Executa o robô em loop infinito"""
