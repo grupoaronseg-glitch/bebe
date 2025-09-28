@@ -5,12 +5,12 @@ Este robô automatiza a navegação entre dois sites específicos:
 - `saude.grupoaronseg.com.br` (10 segundos)
 - `grupoaronseg.com.br` (10 segundos)
 
-O robô executa em modo **headless** (sem interface gráfica) e roda em **loop infinito** até ser interrompido.
+O robô executa fazendo **requisições HTTP** (compatível com qualquer arquitetura) e roda em **loop infinito** até ser interrompido.
 
 ## 🖥️ Compatibilidade
-- **SO**: Kali Linux
+- **SO**: Kali Linux (ARM64/x86_64)
 - **Python**: 3.6+
-- **Navegador**: Chrome/Chromium (instalado automaticamente)
+- **Método**: Requisições HTTP (não requer navegador)
 
 ## 🚀 Instalação e Execução
 
