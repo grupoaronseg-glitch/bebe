@@ -44,11 +44,12 @@ Pressione `Ctrl+C` no terminal para parar o robô gracefully.
 
 ### 📈 Logs Exibidos
 - Início e fim de cada ciclo
-- Requisições HTTP aos sites
-- Status codes e tamanho das respostas
+- Simulação de digitação da URL
+- Carregamento da página
+- Status codes e tamanho das páginas
 - Títulos das páginas (quando disponíveis)
-- Contagem regressiva (10 segundos por site)
-- Tempo de resposta dos sites
+- Contagem regressiva (20 segundos)
+- Tempo de resposta do site
 - Contador de ciclos executados
 - Tratamento de erros de conexão
 
