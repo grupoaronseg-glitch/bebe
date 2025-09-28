@@ -22,10 +22,7 @@ from urllib.parse import urljoin
 
 class WebRobotSimple:
     def __init__(self):
-        self.sites = [
-            "https://saude.grupoaronseg.com.br",
-            "https://grupoaronseg.com.br"
-        ]
+        self.site = "https://saude.grupoaronseg.com.br"
         self.cycle_count = 0
         self.session = None
         self.setup_logging()
