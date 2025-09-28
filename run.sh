@@ -12,4 +12,4 @@ echo "==============================="
 cd /app
 
 # Executa o robô
-python3 robot.py
+python3 robot_simple.py
