@@ -35,12 +35,13 @@ Pressione `Ctrl+C` no terminal para parar o robô gracefully.
 ## 📊 Funcionalidades
 
 ### ✅ Recursos Implementados
-- **Modo Headless**: Execução sem interface gráfica
+- **Requisições HTTP**: Execução via requests (sem dependência de navegador)
 - **Loop Infinito**: Executa até ser interrompido
 - **Logs Detalhados**: Mostra todas as ações no terminal
 - **Tratamento de Erros**: Recupera de falhas automaticamente
 - **Parada Graceful**: Para corretamente com Ctrl+C
-- **Instalação Automática**: Instala todas as dependências
+- **Instalação Simples**: Apenas Python e requests
+- **Multi-arquitetura**: Funciona em ARM64 e x86_64
 
 ### 📈 Logs Exibidos
 - Início e fim de cada ciclo
