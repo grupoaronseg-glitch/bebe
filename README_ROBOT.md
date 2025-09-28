@@ -45,12 +45,13 @@ Pressione `Ctrl+C` no terminal para parar o robô gracefully.
 
 ### 📈 Logs Exibidos
 - Início e fim de cada ciclo
-- Carregamento de páginas
+- Requisições HTTP aos sites
+- Status codes e tamanho das respostas
+- Títulos das páginas (quando disponíveis)
 - Contagem regressiva (10 segundos por site)
-- Título das páginas acessadas
-- Tempo de carregamento
+- Tempo de resposta dos sites
 - Contador de ciclos executados
-- Tratamento de erros
+- Tratamento de erros de conexão
 
 ### 🔄 Fluxo de Execução
 1. **Acessa** `saude.grupoaronseg.com.br`
