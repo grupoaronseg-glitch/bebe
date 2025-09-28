@@ -53,11 +53,10 @@ Pressione `Ctrl+C` no terminal para parar o robô gracefully.
 - Tratamento de erros de conexão
 
 ### 🔄 Fluxo de Execução
-1. **Acessa** `saude.grupoaronseg.com.br`
-2. **Permanece** 10 segundos
-3. **Acessa** `grupoaronseg.com.br`
-4. **Permanece** 10 segundos
-5. **Repete** o ciclo indefinidamente
+1. **Digita** `saude.grupoaronseg.com.br` no navegador
+2. **Pressiona Enter** para acessar
+3. **Permanece** 20 segundos no site
+4. **Repete** o ciclo indefinidamente
 
 ## 🛠️ Configurações Técnicas
 
