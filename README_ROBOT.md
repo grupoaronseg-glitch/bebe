@@ -1,11 +1,10 @@
 # 🤖 Robô de Navegação Web Automática
 
 ## 📝 Descrição
-Este robô automatiza a navegação entre dois sites específicos:
-- `saude.grupoaronseg.com.br` (10 segundos)
-- `grupoaronseg.com.br` (10 segundos)
+Este robô automatiza a navegação para o site específico:
+- `saude.grupoaronseg.com.br` (permanece 20 segundos)
 
-O robô executa fazendo **requisições HTTP** (compatível com qualquer arquitetura) e roda em **loop infinito** até ser interrompido.
+O robô simula **digitar a URL no navegador** e executa em **loop infinito** até ser interrompido.
 
 ## 🖥️ Compatibilidade
 - **SO**: Kali Linux (ARM64/x86_64)
