@@ -72,9 +72,12 @@ class WebRobotSimple:
             return False
 
     def visit_site(self, url):
-        """Visita um site fazendo requisição HTTP e permanece por 10 segundos"""
+        """Visita um site fazendo requisição HTTP e permanece por 20 segundos"""
         try:
-            self.logger.info(f"🌐 ACESSANDO: {url}")
+            self.logger.info(f"⌨️  DIGITANDO URL NO NAVEGADOR: {url}")
+            time.sleep(1)  # Simula digitação
+            
+            self.logger.info(f"🌐 PRESSIONANDO ENTER - ACESSANDO: {url}")
             start_time = time.time()
             
             # Faz a requisição HTTP
@@ -83,9 +86,9 @@ class WebRobotSimple:
             load_time = time.time() - start_time
             
             if response.status_code == 200:
-                self.logger.info(f"✅ SUCESSO! Site acessado em {load_time:.2f} segundos")
+                self.logger.info(f"✅ SUCESSO! Site carregado em {load_time:.2f} segundos")
                 self.logger.info(f"📄 STATUS CODE: {response.status_code}")
-                self.logger.info(f"📏 TAMANHO DA RESPOSTA: {len(response.content)} bytes")
+                self.logger.info(f"📏 TAMANHO DA PÁGINA: {len(response.content)} bytes")
                 
                 # Extrai título da página se possível
                 try:
@@ -102,12 +105,13 @@ class WebRobotSimple:
             else:
                 self.logger.warning(f"⚠️  RESPOSTA NÃO-OK: Status {response.status_code}")
             
-            # Permanece "navegando" por 10 segundos
-            for i in range(10, 0, -1):
-                self.logger.info(f"⏰ Permanecendo no site... {i} segundos restantes")
+            # Permanece "navegando" por 20 segundos
+            self.logger.info("⏰ PERMANECENDO NO SITE POR 20 SEGUNDOS...")
+            for i in range(20, 0, -1):
+                self.logger.info(f"⏰ {i} segundos restantes...")
                 time.sleep(1)
             
-            self.logger.info("✅ TEMPO COMPLETADO - Saindo do site")
+            self.logger.info("✅ TEMPO COMPLETADO - 20 segundos no site")
             return True
             
         except requests.exceptions.Timeout:
