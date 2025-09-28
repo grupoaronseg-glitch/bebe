@@ -26,7 +26,7 @@ sudo apt install -y google-chrome-stable chromium-browser chromium-driver
 # Instala dependências Python
 echo "📚 Instalando dependências Python..."
 cd /app/backend
-pip3 install selenium webdriver-manager
+pip3 install requests
 
 echo ""
 echo "✅ INSTALAÇÃO COMPLETA!"
