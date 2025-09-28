@@ -92,7 +92,8 @@ pip3 install selenium webdriver-manager
 ```
 
 ## 📄 Arquivos do Projeto
-- `robot.py` - Script principal do robô
+- `robot_simple.py` - Script principal do robô (versão HTTP)
+- `robot.py` - Script com Selenium (requer ChromeDriver)
 - `install.sh` - Instalação automática
 - `run.sh` - Execução do robô
 - `README_ROBOT.md` - Esta documentação
