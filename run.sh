@@ -5,6 +5,10 @@
 
 echo "🤖 INICIANDO ROBÔ WEB AUTOMÁTICO"
 echo "==============================="
+echo "🎯 SITE: saude.grupoaronseg.com.br"
+echo "⏰ TEMPO: 20 segundos por visita"
+echo "⌨️  SIMULA: Digitar URL no navegador"
+echo "==============================="
 echo "Pressione Ctrl+C para parar o robô"
 echo "==============================="
 
