@@ -146,14 +146,12 @@ class WebRobotSimple:
 
     def run(self):
         """Executa o robô em loop infinito"""
-        self.logger.info("🤖 INICIANDO ROBÔ DE NAVEGAÇÃO WEB SIMPLIFICADO")
+        self.logger.info("🤖 ROBÔ DE NAVEGAÇÃO WEB AUTOMÁTICA")
         self.logger.info("=" * 60)
-        self.logger.info("🎯 SITES ALVO:")
-        for i, site in enumerate(self.sites, 1):
-            self.logger.info(f"   {i}. {site}")
-        self.logger.info("⏱️  TEMPO POR SITE: 10 segundos")
+        self.logger.info("🎯 SITE ALVO: saude.grupoaronseg.com.br")
+        self.logger.info("⏱️  TEMPO NO SITE: 20 segundos")
         self.logger.info("🔁 MODO: Loop infinito (Ctrl+C para parar)")
-        self.logger.info("🌐 MÉTODO: Requisições HTTP (compatível ARM64/x86_64)")
+        self.logger.info("⌨️  SIMULAÇÃO: Digita URL e acessa site")
         self.logger.info("=" * 60)
 
         try:
