@@ -100,13 +100,15 @@ pip3 install selenium webdriver-manager
 
 ## 🔧 Exemplo de Saída
 ```
-2024-01-15 10:30:01 - [ROBÔ] - INFO - 🤖 INICIANDO ROBÔ DE NAVEGAÇÃO WEB
-2024-01-15 10:30:01 - [ROBÔ] - INFO - 🔄 INICIANDO CICLO #1
-2024-01-15 10:30:01 - [ROBÔ] - INFO - 🌐 ACESSANDO: https://saude.grupoaronseg.com.br
-2024-01-15 10:30:03 - [ROBÔ] - INFO - ✅ SUCESSO! Página carregada em 2.34 segundos
-2024-01-15 10:30:03 - [ROBÔ] - INFO - ⏰ Permanecendo no site... 10 segundos restantes
+2025-09-28 18:13:56 - [ROBÔ] - INFO - 🤖 INICIANDO ROBÔ DE NAVEGAÇÃO WEB SIMPLIFICADO
+2025-09-28 18:13:56 - [ROBÔ] - INFO - 🔄 INICIANDO CICLO #1
+2025-09-28 18:13:56 - [ROBÔ] - INFO - 🌐 ACESSANDO: https://saude.grupoaronseg.com.br
+2025-09-28 18:13:58 - [ROBÔ] - INFO - ✅ SUCESSO! Site acessado em 1.87 segundos
+2025-09-28 18:13:58 - [ROBÔ] - INFO - 📄 STATUS CODE: 200
+2025-09-28 18:13:58 - [ROBÔ] - INFO - 📏 TAMANHO DA RESPOSTA: 138675 bytes
+2025-09-28 18:13:58 - [ROBÔ] - INFO - 📄 TÍTULO DA PÁGINA: Método Secar em 20 Dias...
+2025-09-28 18:13:58 - [ROBÔ] - INFO - ⏰ Permanecendo no site... 10 segundos restantes
 ...
-2024-01-15 10:30:13 - [ROBÔ] - INFO - ✅ TEMPO COMPLETADO - Saindo do site
 ```
 
 ---
